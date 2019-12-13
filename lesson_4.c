@@ -10,14 +10,15 @@
 
 #define X 8
 #define Y 8
+#define QUEENS 8
 int board[Y][X];
 
 void boardFillBarrier(int b) { // b - Максимальное число препятствий
   int i;
   int j;
   int k;
-  for (i = 0; i < Y; i++) {
-	for (j = 0; j < X; j++) {
+  for (i = 1; i < Y; i++) {
+	for (j = 1; j < X; j++) {
       k = rand() % 2;
       if ((b != 0) && ( k> 0) ) {
          if ((i + j !=0) && (i + j != X+Y -2)) {
@@ -42,8 +43,9 @@ void printBoard() {
 }
 
 int routes(int x, int y) {
+  if (board[x][y] == 1) return 0;
   if ((x == 0 || y == 0) )
-	return board[x][y] == 0 ? 1 : 0;
+	return 1;
   else
 	return routes(x - 1, y) + routes(x, y - 1);
 }
@@ -106,15 +108,22 @@ int main( )
   // srand ( time(NULL) );
    boardFillBarrier(3);
    printBoard();
-   printf("routes :%d\n\n", routes(X, Y));
-
-
+  int i;
+  int j;
+  for (i = 0; i < 8; i++) {
+	for (j = 0; j < 8; j++) {
+	  printf("%7d", routes(i, j));
+	}
+	printf("\n");
+  }
+  printf("\n");
+  printf("\n");
    fillArray(arr, SIZE);
 
 
    bubbleSortimp(arr, SIZE);
    printArray(arr, SIZE);
-   printf("binary %d search: %d\n\n\n", 56, binSearch(arr, 0, SIZE - 1, 56));
+   printf("binary %d search: %d\n\n\n", 57, binSearch(arr, 0, SIZE - 1, 57));
 
 
 

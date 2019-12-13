@@ -1,5 +1,5 @@
-/*lesson_3.c
-* Home work. Search && Sort.
+/*lesson_4.c
+* Home work. Dynamic programming.
 *
 *Chernenko Konstantin
 *in CodeBlocks
@@ -114,7 +114,7 @@ int main( )
 
    bubbleSortimp(arr, SIZE);
    printArray(arr, SIZE);
-   printf("binary %d search: %d\n\n\n", 42, binSearch(arr, 0, SIZE - 1, 56));
+   printf("binary %d search: %d\n\n\n", 56, binSearch(arr, 0, SIZE - 1, 56));
 
 
 

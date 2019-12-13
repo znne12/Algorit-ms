@@ -87,21 +87,6 @@ void bubbleSortimp(int* a, int len) {
 }
 
 
-//int binSearch(int* a, int len, int value) {
-//  int left = 0;
-//  int right = len - 1;
-//  int mid = (left + right) / 2;
-//  while (left < right && a[mid] != value) {
-//	if (a[mid] < value)
-//	  left = mid + 1;
-//	else
-//	  right = mid;
-//	mid = (left + right) / 2;
-//  }
-//
-//  return (a[mid] == value) ? mid : -1;
-//}
-
 int binSearch(int* a, int left, int right, int value) {
 
   if (left < right && a[(left + right) / 2] != value) {
@@ -129,9 +114,12 @@ int main( )
 
    bubbleSortimp(arr, SIZE);
    printArray(arr, SIZE);
-   printf("binary %d search: %d\n", 42, binSearch(arr, 0, SIZE - 1, 56));
+   printf("binary %d search: %d\n\n\n", 42, binSearch(arr, 0, SIZE - 1, 56));
 
-  printf("\n");
+
+
+
+
 
     return 0;
 }

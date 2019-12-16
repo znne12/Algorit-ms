@@ -215,6 +215,7 @@ int main()
     while (doublyList.size > 0)
         printf("%c ", popList(&doublyList, popError));
 
+    system("pause");
     return 0;
 }
 

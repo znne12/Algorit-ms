@@ -26,6 +26,8 @@ Node * getFreeNode(T index, char ch){
   return tmp;
 }
 
+
+
 void symmetricTravers(Node *root) {
   if (root) {
 	symmetricTravers(root->left);
